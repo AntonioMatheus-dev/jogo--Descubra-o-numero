@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <h1>Descubra o Número</h1>
+    </header>
+    <main>
+ <section>
+            <h2>Regras</h2>
+            <ol>
+                <li>O computador escolhe um número secreto aleatório entre 1 e 100:</li>
+                <ul style="list-style: disc;">
+                    <li>Esse número é mantido em segredo até o jogador acertar (ou perder).</li>
+                </ul>
+
+                <li>O jogador tem 10 tentativas para descobrir o número.</li>
+                <ul style="list-style: disc;">
+                    <li>A cada palpite, o contador de tentativas diminui em 1.</li>
+                    <li>Quando o contador chega a 0, o jogador perde o jogo.</li>
+                </ul>
+
+                <li>A cada tentativa, o jogo dá uma dica:</li>
+                <ul style="list-style: disc;">
+                    <li>Se o palpite for menor que o número secreto → mostra “Seu palpite foi menor”.</li>
+                    <li>Se o palpite for maior → mostra “Seu palpite foi maior”.</li>
+                </ul>
+
+                <li>Se o jogador acertar, o jogo mostra:</li>
+                <ul style="list-style: disc;">
+                    <li>“Parabéns! Você acertou o número!”</li>
+                    <li>O número secreto e o total de tentativas usadas.</li>
+                </ul>
+
+                <li>Se o jogador errar todas as tentativas:</li>
+                <ul style="list-style: disc;">
+                    <li>O jogo exibe “Suas tentativas acabaram!”</li>
+                    <li>Mostra também qual era o número secreto.</li>
+                </ul>
+
+                <li>Após o fim do jogo (acerto ou erro):</li>
+                <ul style="list-style: disc;">
+                    <li>O jogador pode clicar em “Reiniciar” para começar uma nova partida.</li>
+                    <li>Um novo número secreto será sorteado e as tentativas serão resetadas.</li>
+                </ul>
+
+                <li>Melhorias futuras (opcionais):</li>
+                <ul style="list-style: disc;">
+                    <li>Mostrar o histórico de palpites anteriores.</li>
+                    <li>Permitir escolher o intervalo (por exemplo, de 1 a 50).</li>
+                    <li>Adicionar níveis de dificuldade (Fácil, Médio, Difícil).</li>
+                    <li>Exibir mensagens coloridas (verde para acerto, vermelho para erro).</li>
+                </ul>
+            </ol>
+        </section>
+        <div class="jogo">
+            <p>Digite seu palpite ao lado <input type="number" name="palpite" id="palpite"></p>
+
+            <button onclick="jogo()">Palpite</button>
+            <div id="res">Resultado</div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
