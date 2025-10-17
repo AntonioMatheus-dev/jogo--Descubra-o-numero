@@ -20,9 +20,10 @@ body{
     min-height: 100vh;
     flex-direction: column;
     align-items: center;
-    color: var(--cor-texto);
     
 }
+
+
 
 @keyframes moverGradiente {
   0% { background-position: 0% 50%; }
@@ -32,9 +33,10 @@ body{
 
 
 header{
-      background: linear-gradient(270deg, #3225e9, #594ae2, #7a66f5);
+      background: linear-gradient(270deg, #3225e9, #594ae2, #5c45ee);
       background-size: 600% 600%;
       animation: moverGradiente 10s ease infinite;
+      color: var(--cor-texto);
       width: 100%;
       padding: 80px 0;
       border-radius: 6px;
