@@ -1,24 +1,30 @@
-let numero_secreto =Math.floor(Math.random()*100)+1
-let contador=1
+let numero_secreto = Math.floor(Math.random() * 100) + 1;
+let contador = 1;
 
-function jogo(){
-    var palpite =Number (window.document.getElementById("palpite").value)
-    var res = window.document.getElementById("res");
-    
-    if (contador>10){
-        res.innerText = 'Suas tentaivas acabaram'
-        return
-    }
+function jogo() {
+  const palpite = Number(document.getElementById("palpite").value);
+  const res = document.getElementById("res");
 
-    if (palpite===numero_secreto){
-        res.innerText = `Parabens voçê acertou em ${contador} Tentativas`
+  // Limpar classes anteriores
+  res.classList.remove("acerto", "erro", "dica", "animate");
 
-    }else if(palpite<numero_secreto){
-        res.innerText = 'seu palpite foi menor'
-    }else{
-        res.innerText = 'seu palpite foi maior'
-    }
-    contador++;
-    console.log(`Tentativas: ${contador}`)
+  if (contador > 10) {
+    res.innerText = "Suas tentativas acabaram!";
+    res.classList.add("erro", "animate"); // adiciona cor de erro + pulse
+    return;
+  }
 
+  if (palpite === numero_secreto) {
+    res.innerText = `Parabéns! Você acertou em ${contador} tentativas!`;
+    res.classList.add("acerto", "animate"); // verde + pulse
+  } else if (palpite < numero_secreto) {
+    res.innerText = "Seu palpite foi menor";
+    res.classList.add("dica", "animate"); // amarelo + pulse
+  } else {
+    res.innerText = "Seu palpite foi maior";
+    res.classList.add("dica", "animate"); // amarelo + pulse
+  }
+
+  contador++;
+  console.log(`Tentativas: ${contador}`);
 }
